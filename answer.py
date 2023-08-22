@@ -14,6 +14,7 @@ def func(strings):
             strings[index] = '：'
     return "".join(strings)
 print(func(strings))
+#人易科技：上 機 測 驗 - 演算法
 
 
 # 2. 去掉中文字間的空白(保留-號二側空白)
@@ -27,6 +28,7 @@ def func(strings):
             strings[index] = " - "
     return "".join(strings)
 print(func(strings))
+#人易科技:上機測驗 - 演算法
 
 # 3. 列印出符號:到-之間的字元
 strings = "人易科技:上 機 測 驗 - 演算法"
@@ -45,6 +47,14 @@ def print_between(strings):
             print(i)
 
 print_between(strings)
+#上
+# 
+#機
+# 
+#測
+# 
+#驗
+#
 
 # 三、資料處理-陣列
 # 今有陣列資料 0,1,2,3,4,5,6,7,8,9請寫出資料處理程式碼
@@ -62,6 +72,7 @@ def odd_minus_even(nums):
             even += i
     return odd-even
 print(odd_minus_even(nums))
+#5
 
 # 2. 分割成二陣列,分別存放「偶數值」及「奇數值」
 nums = [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ]
@@ -78,6 +89,7 @@ def split(nums):
 even_nums ,odd_nums = split(nums)
 
 print(even_nums , odd_nums)
+#[0, 2, 4, 6, 8] [1, 3, 5, 7, 9]
 
 # 四、資料排序-正序
 # 今有一陣列資料77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 請寫出正序排列處理程式碼
@@ -93,6 +105,7 @@ def sort(arr):
     return sort(left) + middle + sort(right)
 
 print(sort(nums))
+#[0, 1, 4, 5, 5, 9, 13, 22, 55, 77, 97, 796]
 
 # 五、邏輯處理-交集、差集、聯集
 # 今有二陣列,請寫出資料處理程式碼
@@ -113,6 +126,7 @@ def intersec(nums1 , nums2):
         if num_dict.get(i): result.append(i)
     return result
 print(intersec(a ,b))
+#[0, 1, 4, 5, 9]
 
 # 2.陣列d = 陣列a 差集 陣列b
 a = [ 77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 ]
@@ -135,6 +149,7 @@ def  diff(nums1 , nums2):
     return result
 
 print(diff(a ,b))
+#[2, 3, 6, 7, 8, 77, 22, 13, 55, 97, 796]
 
 # 3.陣列e = 陣列a 聯集 陣列b
 a = [ 77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 ]
@@ -152,6 +167,7 @@ def  union(nums1 , nums2):
     return result + list(num_dict.keys())
 
 print(union(a ,b))
+#[2, 3, 6, 7, 8, 77, 5, 22, 13, 55, 97, 4, 796, 1, 0, 9]
 
 # 六、兩數總和
 # • 給定一個整數陸列 nums 和一個整數 target,當兩數總和為target時,返回兩數的索引。
@@ -168,3 +184,4 @@ def twoSum(nums ,target):
 
     return []
 print(twoSum(nums , target))
+#[0, 1]
