@@ -115,27 +115,21 @@ print(sort(nums))
 
 # 1.陣列c = 陣列a 交集 陣列b
 a = [ 77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 ]
-b = [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ]
+b = [ 0 , 1 , 2 , 3 , 4 ,4 , 5 , 6 , 7 , 8 , 9 ]
 def intersec(nums1 , nums2):
     result = []
-    if len(nums1)==0 or len(nums2)==0:
-        return result
-
     num_dict = dict.fromkeys(nums1, True)
     for i in nums2:
         if num_dict.get(i): result.append(i)
-    return result
+    return list(set(result))
 print(intersec(a ,b))
 #[0, 1, 4, 5, 9]
 
 # 2.陣列d = 陣列a 差集 陣列b
 a = [ 77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 ]
-b = [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ]
+b = [ 0 , 1 , 2 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ]
 def  diff(nums1 , nums2):
     result = []
-    if len(nums1)==0 or len(nums2)==0:
-        return result
-
     num_dict = dict.fromkeys(nums1, True)
     inter_dict = {}
     for i in nums2:
@@ -146,7 +140,7 @@ def  diff(nums1 , nums2):
     for i in nums1:
         if not inter_dict.get(i): 
             result.append(i)
-    return result
+    return list(set(result))
 
 print(diff(a ,b))
 #[2, 3, 6, 7, 8, 77, 22, 13, 55, 97, 796]
@@ -156,17 +150,15 @@ a = [ 77 , 5 , 5 , 22 , 13 , 55 , 97 , 4 , 796 , 1 , 0 , 9 ]
 b = [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 ]
 def  union(nums1 , nums2):
     result = []
-    if len(nums1)==0 or len(nums2)==0:
-        return result
 
     num_dict = dict.fromkeys(nums1, True)
     for i in nums2:
         if not num_dict.get(i): 
             result.append(i)
     
-    return result + list(num_dict.keys())
+    return list(set(result + list(num_dict.keys())))
 
-print(union(a ,b))
+print(union(a , b ))
 #[2, 3, 6, 7, 8, 77, 5, 22, 13, 55, 97, 4, 796, 1, 0, 9]
 
 # 六、兩數總和
